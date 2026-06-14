@@ -35,3 +35,16 @@ Technology Stack
 * Language: Python 3.10+
 * Data Engineering: Pandas, NumPy, PyArrow, FastParquet
 * Machine Learning: XGBoost, Scikit Learn
+
+Future Research & Alpha Generation Roadmap (v3.0)
+
+While the current pipeline relies on a causal, single-window forecasting model, future iterations will implement advanced alpha generation techniques derived from top-tier quantitative research:
+
+1. Microstructure Timeline Reconstruction (Manifold Learning)
+The foundational dataset utilizes randomized `time_id` sequencing to obscure temporal causality. To unlock true time-series cross-validation, the next iteration will utilize tick-size granularity analysis combined with t-SNE (t-Distributed Stochastic Neighbor Embedding) to mathematically reverse-engineer and un-scramble the chronological order book.
+
+2. Market Regime Clustering (K-Nearest Neighbors)
+Moving beyond isolated 10-minute feature windows by implementing historical regime aggregation. By deploying a KNN algorithm, the system will scan the entire historical dataset to cluster similar market micro-environments (matching spread, depth, and volatility profiles). Aggregating the realized volatilities of these historical clusters will provide the primary regressor with a powerful, context-aware alpha signal.
+
+3. Deep Learning Ensembles
+Upgrading the XGBoost core to a blended ensemble architecture. This will incorporate LightGBM for processing speed and a 1D-Convolutional Neural Network (1D-CNN) specifically tuned to capture non-linear, sequential wave patterns within the limit order book structure.
